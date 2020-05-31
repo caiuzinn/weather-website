@@ -16,8 +16,8 @@ weatheForm.addEventListener('submit', (e) => {
     fetch('weather?address=' + location).then((response) => {
         response.json().then((data) => {
             if (data.error) return messageOne.textContent = data.error;
-            messageOne.textContent = data[0].forecast;
-            messageTwo.textContent = data[0].location;    
+            messageOne.textContent = data[0].location;
+            messageTwo.textContent = data[0].forecast;    
         })
     })
 });
